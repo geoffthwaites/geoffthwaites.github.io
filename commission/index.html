@@ -6,6 +6,7 @@ modified: 4 April, 2013
 ---
   <h1>Examples of Commission Work</h1>
   <p>Click on any image to open a larger copy in a new window</p>
+
   <!-- script for opening new windows -->
   <script language="JavaScript" type="text/javascript">
    <!--
@@ -14,47 +15,13 @@ modified: 4 April, 2013
    }
    // -->
   </script>
+
   <table class="gallery">
-   <tr>
-    <td>
-     <a href="/commission/01-paperweight/" target="_blank" onclick="pop('/commission/01-paperweight/','611','704'); return false"><img src="/commission/01-paperweight/thumb.jpg" width="149" height="160" alt="Photo: Paperweight" class="photo"></a>
+{% assign columns = 3 %}{% assign column = 0 %}{% for photo in site.commission %}{% assign column = column | plus: 1 %}{% if column > columns %}{% assign column = 1 %}{% endif %}{% if column == 1 %}   <tr>
+{% endif %}    <td>
+     <a href="{{ photo.url | remove: "index" }}" target="_blank" onclick="pop('{{ photo.url | remove: "index" }}','{{ photo.full_image.width | plus: 17 }}','{{ photo.full_image.height | plus: 64 }}'); return false"><img src="{{ photo.url | remove: "index" }}{{ photo.thumb_image.file }}"{% if photo.thumb_image.width %} width="{{ photo.thumb_image.width }}"{% endif %}{% if photo.thumb_image.height %} height="{{ photo.thumb_image.height }}"{% endif %} alt="Photo: {{ photo.title }}" class="photo"></a>
     </td>
-    <td>
-     <a href="/commission/02-goblets/" target="_blank" onclick="pop('/commission/02-goblets/','657','579'); return false"><img src="/commission/02-goblets/thumb.jpg" width="160" height="129" alt="Photo: Goblets" class="photo"></a>
-    </td>
-    <td>
-     <a href="/commission/03-candleholder/" target="_blank" onclick="pop('/commission/03-candleholder/','455','704'); return false"><img src="/commission/03-candleholder/thumb.jpg" width="110" height="160" alt="Photo: Candleholder" class="photo"></a>
-    </td>
+{% if column == columns %}   </tr>
+{% endif %}{% endfor %}{% if column < columns %}    <td colspan="{{ columns | minus: column }}" style="border:none;"></td>
    </tr>
-   <tr>
-    <td>
-     <a href="/commission/04-hippopotamus/" target="_blank" onclick="pop('/commission/04-hippopotamus/','657','599'); return false"><img src="/commission/04-hippopotamus/thumb.jpg" width="160" height="134" alt="Photo: Hippopotamus" class="photo"></a>
-    </td>
-    <td>
-     <a href="/commission/05-pyramid/" target="_blank" onclick="pop('/commission/05-pyramid/','497','704'); return false"><img src="/commission/05-pyramid/thumb.jpg" width="120" height="160" alt="Photo: Pyramid" class="photo"></a>
-    </td>
-    <td>
-     <a href="/commission/06-salver/" target="_blank" onclick="pop('/commission/06-salver/','657','688'); return false"><img src="/commission/06-salver/thumb.jpg" width="160" height="156" alt="Photo: Crystal Salver" class="photo"></a>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     <a href="/commission/07-plate/" target="_blank" onclick="pop('/commission/07-plate/','657','664'); return false"><img src="/commission/07-plate/thumb.jpg" width="160" height="150" alt="Photo: Crystal Plate" class="photo"></a>
-    </td>
-    <td>
-     <a href="/commission/08-vase/" target="_blank" onclick="pop('/commission/08-vase/','657','534'); return false"><img src="/commission/08-vase/thumb.jpg" width="160" height="118" alt="Photo: Vase" class="photo"></a>
-    </td>
-    <td>
-     <a href="/commission/09-marshall/" target="_blank" onclick="pop('/commission/09-marshall/','481','704'); return false"><img src="/commission/09-marshall/thumb.jpg" width="116" height="160" alt="Photo: Marshall Group" class="photo"></a>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     <a href="/commission/10-littleyeldham/" target="_blank" onclick="pop('/commission/10-littleyeldham/','470','704'); return false"><img src="/commission/10-littleyeldham/thumb.jpg" width="113" height="160" alt="Photo: Little Yeldham Church" class="photo"></a>
-    </td>
-    <td>
-     <a href="/commission/11-stlukes/" target="_blank" onclick="pop('/commission/11-stlukes/','657','516'); return false"><img src="/commission/11-stlukes/thumb.jpg" width="160" height="113" alt="Photo: St. Luke's Church" class="photo"></a>
-    </td>
-    <td colspan="1" style="border:none;"></td>
-   </tr>
-  </table>
+{% endif %}  </table>

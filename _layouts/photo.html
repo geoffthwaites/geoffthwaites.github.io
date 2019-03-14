@@ -1,0 +1,16 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+ <meta charset="utf-8">
+ <meta name="author" content="Hand-written by David Thwaites - david@thwaites.org.uk">
+ <title>{{ site.title | escape }}{% if page.gallery %} - {{ page.gallery | escape  }} Gallery{% endif %}{% if page.title %} - {{ page.title | escape  }}{% endif %}</title>
+ <meta name="description" content="{% if page.description %}{{ page.description | escape }}{% else %}{{ site.description | escape }}{% endif %}">
+ <link rel="StyleSheet" href="/global.css" type="text/css" media="screen">
+</head>
+<body class="photo">
+ <img src="./{{ page.full_image.file }}"{% if page.full_image.width %} width="{{ page.full_image.width }}"{% endif %}{% if page.full_image.height %} height="{{ page.full_image.height }}"{% endif %} alt="{% if page.full_image.alt %}{{ page.full_image.alt }}{% else %}{% if page.gallery %}Gallery: {{ page.gallery }}, {% endif %}Photo: {{ page.title }}{% endif %}" title="{% if page.full_image.title %}{{ page.full_image.title }}{% else %}{% if page.gallery %}Gallery: {{ page.gallery }}, {% endif %}Photo: {{ page.title }}{% endif %}">
+{% if page.description %} <p>{{ page.description | escape }}</p>
+{% endif %}</body>
+</html>

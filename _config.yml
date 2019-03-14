@@ -13,23 +13,29 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Geoff Thwaites
-email: grthwaites@hotmail.com
+title:       Geoff Thwaites
+email:       grthwaites@hotmail.com
 description: Geoff Thwaites is a glass artist, specialising in engraving, based in Cambridge, England.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl:     "" # the subpath of your site, e.g. /blog
+url:         "" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
 #github_username:  jekyll
 #google_analytics: 
 
+collections:
+  commission:
+    output:    true
+    permalink: /:collection/:path
+
 # Build settings
 markdown: kramdown
 #theme: minima
+
 plugins:
 #  - jekyll-feed
   - jekyll-redirect-from
+
 exclude:
   - Gemfile
   - Gemfile.lock
   - CNAME
-  
