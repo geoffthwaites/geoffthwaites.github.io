@@ -27,6 +27,14 @@ collections:
     output:    true
     permalink: /:collection/:path
 
+defaults:
+  - scope:
+      path: ""
+      type: commission
+    values:
+      layout:  photo
+      gallery: Commission
+
 # Build settings
 markdown: kramdown
 #theme: minima
