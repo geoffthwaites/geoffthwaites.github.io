@@ -1,0 +1,19 @@
+
+  <!-- script for opening new windows -->
+  <script language="JavaScript" type="text/javascript">
+   <!--
+   function pop(s1,x1,y1) {
+    nw = window.open(s1,"Gallery","width=" + x1 + ",height=" + y1 + ",resizable=yes,scrollbars=yes,toolbar=no,status=no,menubar=no,location=no,directories=no");
+   }
+   // -->
+  </script>
+
+  <table class="gallery">
+{% if include.columns %}{% assign columns = include.columns %}{% else %}{% assign columns = 3 %}{% endif %}{% assign column = 0 %}{% for photo in include.photos %}{% assign column = column | plus: 1 %}{% if column > columns %}{% assign column = 1 %}{% endif %}{% if column == 1 %}   <tr>
+{% endif %}    <td>
+     <a href="{{ photo.url | remove: "index" }}" target="_blank" onclick="pop('{{ photo.url | remove: "index" }}','{{ photo.full_image.width | plus: 17 }}','{{ photo.full_image.height | plus: 64 }}'); return false"><img src="{{ photo.url | remove: "index" }}{{ photo.thumb_image.file }}"{% if photo.thumb_image.width %} width="{{ photo.thumb_image.width }}"{% endif %}{% if photo.thumb_image.height %} height="{{ photo.thumb_image.height }}"{% endif %} alt="Photo: {{ photo.title }}" class="photo"></a>
+    </td>
+{% if column == columns %}   </tr>
+{% endif %}{% endfor %}{% if column < columns %}    <td colspan="{{ columns | minus: column }}" style="border:none;"></td>
+   </tr>
+{% endif %}  </table>
