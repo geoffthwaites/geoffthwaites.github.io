@@ -23,11 +23,19 @@ url:         "" # the base hostname & protocol for your site, e.g. http://exampl
 #google_analytics: 
 
 collections:
+  pages:
+    output:    true
+    permalink: /:title/
   commission:
     output:    true
     permalink: /:collection/:path
 
 defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout:  default
   - scope:
       path: ""
       type: commission
