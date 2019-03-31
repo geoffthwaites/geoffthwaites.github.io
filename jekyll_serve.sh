@@ -10,4 +10,4 @@ cd "$(dirname "$(readlink -f "$0")")"
 HOST="$(hostname -I | awk '{print $1}')"
 
 # run jekyll, trying to mimic GitHub Pages as much as possible!..
-bundle exec jekyll serve --safe --host $HOST
+bundle exec jekyll serve --safe --host $HOST $@
