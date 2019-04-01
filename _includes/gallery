@@ -11,8 +11,9 @@
   <table class="gallery">
 {% if include.columns %}{% assign columns = include.columns %}{% else %}{% assign columns = 3 %}{% endif %}{% assign column = 0 %}{% for photo in include.photos %}{% assign column = column | plus: 1 %}{% if column > columns %}{% assign column = 1 %}{% endif %}{% if column == 1 %}   <tr>
 {% endif %}    <td>
-     <a href="{{ photo.url | remove: "index" }}" target="_blank" onclick="pop('{{ photo.url | remove: "index" }}','{{ photo.full_image.width | plus: 17 }}','{{ photo.full_image.height | plus: 64 }}'); return false"><img src="{{ photo.url | remove: "index" }}{{ photo.thumb_image.file }}"{% if photo.thumb_image.width %} width="{{ photo.thumb_image.width }}"{% endif %}{% if photo.thumb_image.height %} height="{{ photo.thumb_image.height }}"{% endif %} alt="Photo: {{ photo.title }}" class="photo"></a>
-    </td>
+     <a href="{{ photo.url | remove: "index" }}" target="_blank" onclick="pop('{{ photo.url | remove: "index" }}','{{ photo.full_image.width | plus: 17 }}','{{ photo.full_image.height | plus: 64 }}'); return false"><img src="{{ photo.url | remove: "index" }}{{ photo.thumb_image.file }}"{% if photo.thumb_image.width %} width="{{ photo.thumb_image.width }}"{% endif %}{% if photo.thumb_image.height %} height="{{ photo.thumb_image.height }}"{% endif %} alt="{% if photo.title != "" %}{{ photo.title }}{% elsif photo.label != "" %}Photo: {{ photo.label }}{% endif %}" class="photo"></a>
+{% if photo.title != "" %}     <div class="photo-title">{{ photo.title }}</div>
+{% endif %}    </td>
 {% if column == columns %}   </tr>
 {% endif %}{% endfor %}{% if column < columns %}    <td colspan="{{ columns | minus: column }}" style="border:none;"></td>
    </tr>

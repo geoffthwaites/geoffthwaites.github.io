@@ -29,6 +29,9 @@ collections:
   commission:
     output:    true
     permalink: /:collection/:path
+  exhibition:
+    output:    true
+    permalink: /:collection/:path
 
 defaults:
   - scope:
@@ -42,6 +45,12 @@ defaults:
     values:
       layout:  photo
       gallery: Commission
+  - scope:
+      path: ""
+      type: exhibition
+    values:
+      layout:  photo
+      gallery: Exhibition
 
 # Build settings
 markdown: kramdown
