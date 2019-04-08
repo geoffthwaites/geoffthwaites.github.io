@@ -1,0 +1,23 @@
+---
+
+name:          "Lecture: Glass Engraving: the 20th Century Revival"
+
+# start_date is used for sorting
+start_date:    2010-07-15
+# end_date is used to work out if the event has passed
+end_date:      2010-07-31
+
+location:      "Fitzwilliam Museum, Cambridge"
+
+# these are the date(s) and time(s) that will be shown on the webpage
+display_dates: "31 July 2010"
+display_times: "1.15 - 2.15 pm"
+
+# show a link to the event's website
+website_url:   "www.fitzmuseum.cam.ac.uk"
+# website_text is option - it'll default to website_url
+website_text:  ""
+
+description:   "Geoff will be giving a lecture entitled \"Glass Engraving: the 20th Century Revival\" to coincide with the Guild of Glass Engravers exhibition. Spaces are limited - tickets available from the Fitzwilliam reception at 12.45 on the day."
+
+---

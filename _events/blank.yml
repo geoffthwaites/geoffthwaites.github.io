@@ -1,0 +1,23 @@
+---
+
+name:          ""
+
+# start_date is used for sorting
+start_date:    
+# end_date is used to work out if the event has passed
+end_date:      
+
+location:      ""
+
+# these are the date(s) and time(s) that will be shown on the webpage
+display_dates: ""
+display_times: ""
+
+# show a link to the event's website
+website_url:   ""
+# website_text is option - it'll default to website_url
+website_text:  ""
+
+description:   ""
+
+---

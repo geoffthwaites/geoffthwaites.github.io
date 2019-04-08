@@ -1,0 +1,23 @@
+---
+
+name:          "Cambridge Open Studios 2010"
+
+# start_date is used for sorting
+start_date:    2010-07-01
+# end_date is used to work out if the event has passed
+end_date:      2010-08-01
+
+location:      ""
+
+# these are the date(s) and time(s) that will be shown on the webpage
+display_dates: "Saturday and Sunday July 3/4 and July 10/11 2010"
+display_times: "11 am to 6 pm"
+
+# show a link to the event's website
+website_url:   "http://www.camopenstudios.co.uk/"
+# website_text is option - it'll default to website_url
+website_text:  ""
+
+description:   "Over 200 artists open their studios to visitors during four weekends in July. As well as Geoff's exhibition work this will include photographs of recent commissions and pieces made specially for Open Studios (earrings, plates, boxes and window hangings)."
+
+---

@@ -1,0 +1,23 @@
+---
+
+name:          "21st Century Engraved Glass"
+
+# start_date is used for sorting
+start_date:    2010-06-15
+# end_date is used to work out if the event has passed
+end_date:      2010-08-15
+
+location:      "Fitzwilliam Museum, Cambridge"
+
+# these are the date(s) and time(s) that will be shown on the webpage
+display_dates: "15 June  - 15 August 2010"
+display_times: "Tuesday to Saturday 10 - 5, Sunday 12 - 5."
+
+# show a link to the event's website
+website_url:   "www.fitzmuseum.cam.ac.uk"
+# website_text is option - it'll default to website_url
+website_text:  ""
+
+description:   "An exhibition by the Guild of Glass Engravers in which Geoff's work will be included. Full details on visiting the exhibition can be found on the Fitzwilliam website as above.  This exhibition will include the work of internationally renowned engravers and cover styles from traditional to modern innovative work."
+
+---

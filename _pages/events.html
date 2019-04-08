@@ -2,8 +2,55 @@
 title: Geoff Thwaites - Events
 menu-item: events
 modified: 29 June, 2015
+# show_all: true
+# show_from: 2005-01-01
 ---
   <h1>Events</h1>
-  <p>Forthcoming events involving Geoff and/or his work.</p>
-  <p>Geoff is currently working on commissions.</p>
-  <p>Future exhibitions will be displayed here.</p>
+  <p>Forthcoming events involving Geoff and/or his work.</p>{%
+     assign events = site.events | sort: 'start_date', 'last'
+%}{% assign now = site.time | date: "%s" | plus: 0
+%}{% if page.show_all
+%}{%   assign now = 0
+%}{% elsif page.show_from
+%}{%   assign now = page.show_from | date: "%s" | plus: 0
+%}{% endif
+%}{% assign count = 0 %}
+<!-- as of: {{ now | date: "%e %b %Y, %I:%M%p" }} -->{%
+     for event in events
+%}{%   if event.start_date
+%}{%     assign date_num = event.end_date | date: "%s" | plus: 0
+%}{%     if date_num >= now
+%}{%       if count >= 0 %}
+  <hr />{%
+           endif
+%}{%       assign count = count | plus: 1
+%}{%       if event.name != "" %}
+  <h2>{{ event.name }}</h2>{%
+           endif %}
+  <ul>{%
+           if event.location != "" %}
+   <li>{{ event.location }}</li>{%
+           endif
+%}{%       if event.display_dates != "" %}
+   <li>{{ event.display_dates }}</li>{%
+           endif
+%}{%       if event.display_times != "" %}
+   <li>{{ event.display_times }}</li>{%
+           endif
+%}{%       if event.website_url != "" %}
+   <li><a href="{{ event.website_url }}" target="_blank">{% if event.website_text != "" %}{{ event.website_text }}{% else %}{{ event.website_url }}{% endif %}</a></li>{%
+           endif %}
+  </ul>{%
+           if event.description %}
+  <p>{{ event.description }}</p>{%
+           endif
+%}{%     endif
+%}{%   endif
+%}{% endfor
+%}{% if count == 0
+%}{%   assign default = site.events | where: 'default', true | first
+%}{%   if default.description %}
+  <hr />
+  <p>{{ default.description }}</p>{%
+       endif
+%}{% endif %}

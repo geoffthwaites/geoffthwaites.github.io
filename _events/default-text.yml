@@ -1,0 +1,9 @@
+---
+
+name:          "Default text (if no other events are still active)"
+
+default:       true
+
+description:   "Geoff is currently working on commissions.</p><p>Future exhibitions will be displayed here."
+
+---

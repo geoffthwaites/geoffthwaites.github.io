@@ -1,0 +1,23 @@
+---
+
+name:          "Contemporary International Engraved Glass"
+
+# start_date is used for sorting
+start_date:    2015-05-18
+# end_date is used to work out if the event has passed
+end_date:      2015-06-26
+
+location:      "The Red House Glass Cone, Stourbridge"
+
+# these are the date(s) and time(s) that will be shown on the webpage
+display_dates: "18 May 2015"
+display_times: "26 June 2015"
+
+# show a link to the event's website
+website_url:   ""
+# website_text is option - it'll default to website_url
+website_text:  ""
+
+description:   "Guild of Glass Engravers National Exhibition"
+
+---

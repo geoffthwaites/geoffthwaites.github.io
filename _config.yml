@@ -32,6 +32,8 @@ collections:
   exhibition:
     output:    true
     permalink: /:collection/:path
+  events:
+    output:    false
 
 defaults:
   - scope:
