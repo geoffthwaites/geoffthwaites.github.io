@@ -1,9 +1,8 @@
 ---
 title: Geoff Thwaites - Events
 menu-item: events
-modified: 29 June, 2015
 # show_all: true
-# show_from: 2005-01-01
+# show_from: 2005-01-01 10:00
 ---
   <h1>Events</h1>
   <p>Forthcoming events involving Geoff and/or his work.</p>{%
@@ -18,8 +17,12 @@ modified: 29 June, 2015
 <!-- as of: {{ now | date: "%e %b %Y, %I:%M%p" }} -->{%
      for event in events
 %}{%   if event.start_date
-%}{%     assign date_num = event.end_date | date: "%s" | plus: 0
-%}{%     if date_num >= now
+%}{%     assign end_date_num = event.end_date | date: "%s" | plus: 0
+%}{%     assign end_time = event.end_date | date: "%H:%M"
+%}{%     if end_time == "00:00"
+%}{%       assign end_date_num = end_date_num | plus: 86400
+%}{%     endif
+%}{%     if end_date_num > now
 %}{%       if count >= 0 %}
   <hr />{%
            endif
@@ -45,6 +48,7 @@ modified: 29 June, 2015
   <p>{{ event.description }}</p>{%
            endif
 %}{%     endif
+%}{%     assign modified = end_date_num | date: "%e %B, %Y"
 %}{%   endif
 %}{% endfor
 %}{% if count == 0
@@ -53,4 +57,8 @@ modified: 29 June, 2015
   <hr />
   <p>{{ default.description }}</p>{%
        endif
+%}{% else
+%}{%   assign modified = now | date: "%e %B, %Y"
 %}{% endif %}
+
+{% include footer modified=modified %}
