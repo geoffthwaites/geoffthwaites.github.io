@@ -7,6 +7,7 @@ The website is hosted on [GitHub Pages](https://pages.github.com/), which uses [
 - install Ruby
   ```
   ~ $ bash <(curl -sL https://gist.github.com/DaveThw/7d9cf5c7922df0eaa4fc10c51b979b8d/raw/install_ruby_2.6.3.sh)
+  ~ $ source ~/.bashrc
   ```
   (will take a few minutes - probably 5-15mins, depending on your computer)
 - Download (or 'clone') a copy of the repository (the source files for the website):
