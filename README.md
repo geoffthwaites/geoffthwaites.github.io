@@ -4,29 +4,16 @@ Source for Geoff Thwaites's website - https://www.geoff.thwaites.org.uk/
 The website is hosted on [GitHub Pages](https://pages.github.com/), which uses [Jekyll](https://jekyllrb.com/) to build the website from these source files.
 
 ## Set up for editing / preview offline
-- Create a GitHub account: https://github.com/join
-- Ask Dave to give you access to this repository!
-- Check to see if you have `git` installed:
-  ```
-  ~ $ git --version
-  git version 2.7.4
-  ```
-  It shouldn't matter too much which version of git you have - but if you get an error like `bash: git: command not found` then `git` is not installed - if so, install it with:
-  ```
-  ~ $ sudo apt update
-  ~ $ sudo apt install -y git
-  ```
-  (should only take less than a minute)
-- Download (or 'clone') a copy of the repository (the source files for the website):
-  ```
-  ~ $ cd ~
-  ~ $ git clone https://github.com/geoffthwaites/geoffthwaites.github.io.git website
-  ```
 - install Ruby
   ```
   ~ $ bash <(curl -sL https://gist.github.com/DaveThw/7d9cf5c7922df0eaa4fc10c51b979b8d/raw/install_ruby_2.6.3.sh)
   ```
   (will take a few minutes - probably 5-15mins, depending on your computer)
+- Download (or 'clone') a copy of the repository (the source files for the website):
+  ```
+  ~ $ cd ~
+  ~ $ git clone https://github.com/geoffthwaites/geoffthwaites.github.io.git website
+  ```
 - Set up Jekyll and other bits ready to run on your computer:
   ```
   ~ $ cd website
@@ -52,4 +39,6 @@ At this point, you should be able to go to the address given (ie. http://192.168
 Details to come...
 
 ## How to upload changes back to GitHub
-Details to come...
+- Create a GitHub account: https://github.com/join
+- Ask Dave to give you access to this repository!
+Further details to come...
