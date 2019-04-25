@@ -67,3 +67,4 @@ exclude:
   - Gemfile.lock
   - CNAME
   - jekyll_serve.sh
+  - README.md
